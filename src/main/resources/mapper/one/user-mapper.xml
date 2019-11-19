@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- 组数据访问映射 -->
+<mapper namespace="com.doublesource.demo.dataSource_1.mapper.UserMapper" >
+
+    <resultMap id = "user" type = "com.doublesource.demo.dataSource_1.entity.User">
+        <result property = "id" javaType="String" column = "id"  jdbcType="VARCHAR"/>
+        <result property = "userName" javaType="String" column = "username"  jdbcType="VARCHAR"/>
+        <result property = "password" javaType="String" column = "password"  jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <select id="getAllUser"  resultMap="user">
+        SELECT * FROM "TUser";
+    </select>
+
+</mapper>

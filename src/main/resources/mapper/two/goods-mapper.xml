@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- 组数据访问映射 -->
+<mapper namespace="com.doublesource.demo.dataSource_2.mapper.GoodsMapper" >
+
+    <resultMap id = "goods" type = "com.doublesource.demo.dataSource_2.entity.Goods">
+        <result property = "id" javaType="String" column = "id"  jdbcType="VARCHAR"/>
+        <result property = "goodsName" javaType="String" column = "name"  jdbcType="VARCHAR"/>
+        <result property = "price" javaType="Double" column = "price"  jdbcType="NUMERIC"/>
+    </resultMap>
+
+    <select id="getAllGoods"  resultMap="goods">
+        SELECT * FROM goods;
+    </select>
+
+</mapper>
